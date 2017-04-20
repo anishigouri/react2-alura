@@ -23,8 +23,6 @@ import { matchPattern } from 'react-router/lib/PatternUtils';
 function verificaAutenticacao(nextState, replace) {
   const resultado = matchPattern('/timeline(/:login)', nextState.location.pathname);
 
-  console.log(resultado)
-
   const enderecoPrivadoTimeline = resultado.paramValues[0] === undefined;
 
   if(enderecoPrivadoTimeline && localStorage.getItem('auth-token') === null) {
