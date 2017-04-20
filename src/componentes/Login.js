@@ -3,10 +3,14 @@ import {browserHistory} from 'react-router';
 
 export default class Login extends Component {
 
-    constructor() {
-        super();
+    /*
+        É possível acessar o props através do construtor
+    */
+    constructor(props) {
+        super(props);
+        console.log(props.location.query)
         this.state = {
-            msg: ''
+            msg: props.location.query.msg
         };
     }
         
@@ -45,6 +49,7 @@ export default class Login extends Component {
         return (
             <div className="login-box">
                 <h1 className="header-logo">Instalura</h1>
+                <h4>{this.state.msg}</h4>
                 <form onSubmit={this.envia.bind(this)}>
                     <input type="text" ref={ (input) => this.login = input } />
                     <input type="password" ref={ (input) => this.senha = input } />
