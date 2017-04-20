@@ -29,7 +29,7 @@ export default class Login extends Component {
                 if(response.ok) {
                     return response.text();
                 } else {
-                    throw new Error('Não foi possível efetuar o login')
+                    throw new Error('Não foi possível efetuar o login');
                 }
             })
             .then(token => {
